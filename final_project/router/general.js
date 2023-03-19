@@ -7,7 +7,7 @@ const public_users = express.Router();
 
 public_users.post("/register", (req,res) => {
   //Write your code here
-  if(!isValid(req.body.username)) return res.status(400).json({ message: "Invalid User Name"});
+  if(!req.body.username) return res.status(400).json({ message: "Invalid User Name"});
 
   if(!req.body.password) return res.status(400).json({ message: "Invalid Password"});
 
